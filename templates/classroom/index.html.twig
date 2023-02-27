@@ -1,0 +1,15 @@
+<table border="1">
+    <th>id</th>
+    <th>name</th>
+    <th>Editer</th>
+    {% for classroom in classrooms %}
+        <tr>
+            <td>{{classroom.id}}</td>
+            <td>{{classroom.name}}</td>
+            <td>
+                <a href="{{ path ("update_classroom", {"id": classroom.id}) }}">modifier</a>
+                <a href="{{ path ("delete_classroom", {"id": classroom.id}) }}">supprimer</a>
+            </td>
+        </tr>
+    {% endfor %}
+</table>
